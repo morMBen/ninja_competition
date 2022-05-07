@@ -1,4 +1,3 @@
-import React, { useState, useLayoutEffect } from 'react';
 import { useWindowSize } from './utils/useWindowSize';
 
 function Test() {
