@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Path from './path';
+import ToDelete from './ToDelete';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
     {/* <Path /> */}
+    <ToDelete />
   </React.StrictMode>
 );
 
