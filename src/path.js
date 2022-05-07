@@ -1,40 +1,13 @@
 import { useState, Fragment } from 'react';
-import { verticalPath, horizontalPath } from './utils/constants/pathOfSvg';
-import {
-  verticalCoordinates,
-  horizontalCoordinates,
-} from './utils/constants/foreignObjectCoordinates';
-const verticalObjOfSvg = {
-  coordinates: verticalCoordinates,
-  paths: verticalPath.paths,
-  pathViewBox: verticalPath.pathViewBox,
-  pathTransform: verticalPath.pathTransform,
-};
-const horizontalObjOfSvg = {
-  coordinates: horizontalCoordinates,
-  paths: horizontalPath.paths,
-  pathViewBox: horizontalPath.pathViewBox,
-  pathTransform: horizontalPath.pathTransform,
-};
-const { coordinates, paths, pathViewBox, pathTransform } = horizontalObjOfSvg;
-const stepsData = [
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  '11',
-  '12',
-  '13',
-  '14',
-  '15',
-];
+import { getSvgTemplate } from './utils/constants/pathSvg/svgTemplate';
+import { useWindowSize } from './utils/useWindowSize';
+import { stepsData } from './utils/constants/stepsFakeData';
+
 function Path() {
+  const [width, height] = useWindowSize();
+  const { coordinates, paths, pathViewBox, pathTransform } = getSvgTemplate(
+    width < height ? 0 : 1
+  );
   const [numOfSteps, setNumOfSteps] = useState(12);
   const [now, setNow] = useState(4); //! must be smaller or equal to numOfSteps
 
@@ -67,7 +40,6 @@ function Path() {
     return paths.map((e, i) => {
       const endLargerThenI = endingPoint > i;
       const startSmallerOrEqualToI = startingPoint <= i;
-      console.log(startingPoint);
       return (
         <Fragment key={e.d}>
           <path
