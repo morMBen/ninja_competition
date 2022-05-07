@@ -1,84 +1,22 @@
 import { useState, Fragment } from 'react';
-const coordinates = [
-  { stepNum: 1, x: '120', y: '0' },
-  { stepNum: 6, x: '270', y: '420' },
-  { stepNum: 10, x: '10', y: '590' },
-  { stepNum: 12, x: '0', y: '275' },
-  { stepNum: 8, x: '240', y: '640' },
-  { stepNum: 3, x: '265', y: '20' },
-  { stepNum: 14, x: '0', y: '70' },
-  { stepNum: 4, x: '275', y: '205' },
-  { stepNum: 9, x: '160', y: '520' },
-  { stepNum: 13, x: '115', y: '300' },
-  { stepNum: 15, x: '90', y: '140' },
-  { stepNum: 11, x: '85', y: '445' },
-  { stepNum: 5, x: '170', y: '205' },
-  { stepNum: 7, x: '165', y: '365' },
-  { stepNum: 2, x: '185', y: '110' },
-];
-const paths = [
-  {
-    pathNum: 1,
-    d: 'M116.833673,58.685019c-9.502828,0-10.595833,12.946886-30.266423,16.0105',
-  },
-  {
-    pathNum: 2,
-    d: 'M116.833673,58.685019c11.500211,0,11.500211,10.156745,23.000422,10.156742',
-  },
-  {
-    pathNum: 3,
-    d: 'M191.262869,62.895152c-7.883067-2.938573-30.477321,5.995422-51.428774,5.946609',
-  },
-  {
-    pathNum: 4,
-    d: 'M194.730232,86.622533c.027416-14.82612,6.301742-19.932265-3.467362-23.727378',
-  },
-  {
-    pathNum: 5,
-    d: 'M194.730232,86.622533c-.000001,6.478593-34.352415-5.871696-36.892797,4.013279',
-  },
-  {
-    pathNum: 6,
-    d: 'M191.262869,127.264897c7.146403-5.481725-38.429419-16.890709-33.425434-36.629085',
-  },
-  {
-    pathNum: 7,
-    d: 'M191.262869,127.253989c-5.139079,4.16656-30.477322-3.060816-36.894007-.849573',
-  },
-  {
-    pathNum: 8,
-    d: 'M183.379802,169.140468c27.105195-6.413344-45.424994-35.687736-29.01094-42.736052',
-  },
-  {
-    pathNum: 9,
-    d: 'M183.379802,169.140468c-8.332894,1.964207-45.828386-12.860123-66.546129-12.860123',
-  },
-  {
-    pathNum: 10,
-    d: 'M64.139746,160.49221c4.473396,2.255283,35.927387-4.211865,52.693927-4.211865',
-  },
-  {
-    pathNum: 11,
-    d: 'M64.139746,160.49221c-6.69139-3.406173,11.927041-12.373836,9.08859-23.379029',
-  },
-  {
-    pathNum: 12,
-    d: 'M49.165874,111.273158c-8.548437,3.580595,23.299876,22.741118,24.062461,25.840023',
-  },
-  {
-    pathNum: 13,
-    d: 'M88.379747,109.475218c-7.739747,4.572814-28.490323-2.556732-39.213874,1.797941',
-  },
-  {
-    pathNum: 14,
-    d: 'M88.379747,109.475218c10.547101-6.341767-41.249616-36.019446-28.490322-37.67881',
-  },
-  {
-    pathNum: 15,
-    d: 'M86.567248,74.69552c-7.681622,1.070631-17.432769-4.029792-26.677823-2.899112',
-    transform: 'matrix(1.989898 0 0 5.278944-58.843676-252.053187)',
-  },
-];
+import { verticalPath, horizontalPath } from './utils/constants/pathOfSvg';
+import {
+  verticalCoordinates,
+  horizontalCoordinates,
+} from './utils/constants/foreignObjectCoordinates';
+const verticalObjOfSvg = {
+  coordinates: verticalCoordinates,
+  paths: verticalPath.paths,
+  pathViewBox: verticalPath.pathViewBox,
+  pathTransform: verticalPath.pathTransform,
+};
+const horizontalObjOfSvg = {
+  coordinates: horizontalCoordinates,
+  paths: horizontalPath.paths,
+  pathViewBox: horizontalPath.pathViewBox,
+  pathTransform: horizontalPath.pathTransform,
+};
+const { coordinates, paths, pathViewBox, pathTransform } = horizontalObjOfSvg;
 const stepsData = [
   '1',
   '2',
@@ -97,7 +35,7 @@ const stepsData = [
   '15',
 ];
 function Path() {
-  const [numOfSteps, setNumOfSteps] = useState(5);
+  const [numOfSteps, setNumOfSteps] = useState(12);
   const [now, setNow] = useState(4); //! must be smaller or equal to numOfSteps
 
   const fixSteps = (stepsCoordinates) => {
@@ -112,7 +50,7 @@ function Path() {
       <svg
         style={{ maxWidth: '90vw', maxHeight: '90vh', margin: '1.5rem' }}
         id='eMIbA9hUtjS1'
-        viewBox='0 0 360 700'
+        viewBox={pathViewBox}
         xmlns='http://www.w3.org/1999/xhtml'
         shapeRendering='geometricPrecision'
         textRendering='geometricPrecision'
@@ -134,14 +72,14 @@ function Path() {
         <Fragment key={e.d}>
           <path
             d={e.d}
-            transform='matrix(1.989898 0 0 5.278944-58.843674-252.053187)'
+            transform={pathTransform}
             fill='none'
             stroke='#355AC8'
             strokeWidth='5'
           />
           <path
             d={e.d}
-            transform='matrix(1.989898 0 0 5.278944-58.843674-252.053187)'
+            transform={pathTransform}
             fill='none'
             stroke={
               now !== 0 && (endLargerThenI || startSmallerOrEqualToI)
