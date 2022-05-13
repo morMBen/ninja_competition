@@ -46,7 +46,6 @@ function CompPath({
             }
             strokeWidth='3'
           />
-          {/* {console.log(e.pathNum)} */}
         </Fragment>
       );
     });

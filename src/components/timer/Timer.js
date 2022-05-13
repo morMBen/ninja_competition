@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { secToString } from './utils/ClockCalc';
+import { secToString } from '../../utils/ClockCalc';
 
-function ToDelete() {
+function Timer() {
   //? Animation frame states
   const [timerAnimationFrame, setTimerAnimationFrame] = useState(null);
   const [counterAnimationFrame, setCounterAnimationFrame] = useState(null);
@@ -77,4 +77,4 @@ function ToDelete() {
   );
 }
 
-export default ToDelete;
+export default Timer;
