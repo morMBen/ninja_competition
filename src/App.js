@@ -3,20 +3,20 @@ import { useWindowSize } from './utils/useWindowSize';
 import { getSvgTemplate } from './utils/constants/pathSvg/svgTemplate';
 import CompPath from './components/compPath/CompPath';
 import { stepsData } from './utils/constants/stepsFakeData';
-import Timer from './components/timer/Timer';
+import RoundScreenMobile from './screens/rounde/RoundScreen.mobile';
 function App() {
   const [width, height] = useWindowSize();
   useEffect(() => {});
   return (
-    <div>
-      <Timer />
-      <CompPath
+    <>
+      {/* <CompPath
         svgTemplate={getSvgTemplate(width < height ? 0 : 1)}
         stepsData={stepsData}
         numOfSteps={14}
         nowOnStepNum={2}
-      />
-    </div>
+      /> */}
+      <RoundScreenMobile />
+    </>
   );
 }
 
