@@ -1,0 +1,10 @@
+export const start_class = 'stopwatch-button--green';
+export const start_text = 'Start';
+export const stop_class = 'stopwatch-button--red';
+export const stop_text = 'Stop';
+export const split_class = 'stopwatch-button--blue';
+export const split_text = 'Split';
+export const reset_class = 'stopwatch-button--yellow';
+export const reset_text = 'Reset';
+export const off_class = 'stopwatch-button--off';
+export const off_text = '';

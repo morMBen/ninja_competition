@@ -23,21 +23,37 @@
 }
 .RoundScreenMobile__footer {
   border-radius: 0 0 20px 20px;
-
   background-color: lightgray;
   width: 100%;
   position: relative;
   height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-/* .RoundScreenMobile__footer:before {
-  content: '';
-  position: absolute;
-  width: 102%;
-  height: 100%;
-
-  border-color: red transparent transparent transparent;
-  border-style: solid;
-  top: -50px;
-  right: -28px;
-  transform: rotate(-15deg);
-} */
+.stopwatch-button {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 15vh;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.stopwatch-button--red {
+  background-color: red;
+}
+.stopwatch-button--green {
+  background-color: green;
+}
+.stopwatch-button--yellow {
+  background-color: yellow;
+}
+.stopwatch-button--blue {
+  background-color: rgb(86, 86, 255);
+}
+.stopwatch-button--off {
+  background-color: rgb(181, 181, 181);
+}
