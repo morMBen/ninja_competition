@@ -7,6 +7,8 @@
 }
 
 .RoundScreenMobile__section {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
@@ -26,6 +28,7 @@
   background-color: lightgray;
   width: 100%;
   position: relative;
+  /* flex-grow: 1; */
   height: 20%;
   display: flex;
   align-items: center;
@@ -42,6 +45,11 @@
   justify-content: center;
   border-radius: 50%;
 }
+.RoundScreenMobile__seconds {
+  color: darkblue;
+  font-size: 40px;
+  text-align: center;
+}
 .stopwatch-button--red {
   background-color: red;
 }
@@ -53,6 +61,10 @@
 }
 .stopwatch-button--blue {
   background-color: rgb(86, 86, 255);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+}
+.stopwatch-button--buzzer {
+  background-color: rgb(128, 128, 255);
 }
 .stopwatch-button--off {
   background-color: rgb(181, 181, 181);

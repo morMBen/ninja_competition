@@ -1,30 +1,37 @@
 import { useState } from 'react';
-import Timer from '../../components/timer/Timer';
+import StopWatchBrain from '../../components/stopWatch/StopWatchBrain';
+import { secToString } from '../../utils/ClockCalc';
 import './style.css';
 
 function RoundScreenMobile() {
-  const [isRunning, setIsRunning] = useState(false);
-  const [isReset, setIsReset] = useState(true);
-
-  const handleStartStop = () => {
-    setIsRunning((prev) => !prev);
-    setIsReset(false);
-  };
-  const handleSplitReset = () => {
-    !isReset && setIsReset(true);
+  const [splitPoints, setSplitPoints] = useState([]);
+  const [seconds, setSeconds] = useState(0);
+  const setFinish = (arg1, arg2) => {
+    console.log(arg1);
+    console.log(arg2);
   };
   return (
     <div className='RoundScreenMobile'>
       <section className='RoundScreenMobile__section'>
         <div className='RoundScreenMobile__head '></div>
-        <div className='RoundScreenMobile__scores'></div>
+        <div className='RoundScreenMobile__scores'>
+          {
+            <h1 className='RoundScreenMobile__seconds'>
+              {secToString(seconds)}
+            </h1>
+          }
+          {splitPoints.map((point) => (
+            <h1 key={point}>{secToString(point)}</h1>
+          ))}
+        </div>
         <div className='RoundScreenMobile__footer'>
-          <Timer
-            fractionSpeed={15}
-            isRunning={isRunning}
-            isReset={isReset}
-            handleStartStop={handleStartStop}
-            handleSplitReset={handleSplitReset}
+          <StopWatchBrain
+            splitPoints={splitPoints}
+            setSplitPoints={setSplitPoints}
+            setFinish={setFinish}
+            numOfPoints={3}
+            setSeconds={setSeconds}
+            seconds={seconds}
           />
         </div>
       </section>
