@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useWindowSize } from './utils/useWindowSize';
-import { getSvgTemplate } from './utils/constants/pathSvg/svgTemplate';
-import CompPath from './components/compPath/CompPath';
-import { stepsData } from './utils/constants/stepsFakeData';
+// import React, { useEffect, useState } from 'react';
+// import { useWindowSize } from './utils/useWindowSize';
+// import { getSvgTemplate } from './utils/constants/pathSvg/svgTemplate';
+// import CompPath from './components/compPath/CompPath';
+// import { stepsData } from './utils/constants/stepsFakeData';
 import RoundScreenMobile from './screens/rounde/RoundScreen.mobile';
 
-import StopWatchBrain from './components/stopWatch/StopWatchBrain';
+// import StopWatchBrain from './components/stopWatch/StopWatchBrain';
 function App() {
-  const [width, height] = useWindowSize();
+  // const [width, height] = useWindowSize();
 
   return (
     <>
