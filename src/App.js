@@ -17,7 +17,7 @@ function App() {
         numOfSteps={14}
         nowOnStepNum={2}
       /> */}
-      <RoundScreenMobile />
+      <RoundScreenMobile numOfPoints={4} />
     </>
   );
 }

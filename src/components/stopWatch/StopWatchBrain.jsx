@@ -39,6 +39,10 @@ function StopWatchBrain({
   };
   const handleSplitReset = () => {
     if (isOn) {
+      if (splitPoints.length + 1 === numOfPoints) {
+        setPauseOn(seconds);
+        setIsOn((prev) => !prev);
+      }
       setSplitPoints((prev) => [...prev, seconds]);
     } else {
       restartTimer();
