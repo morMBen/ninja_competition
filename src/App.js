@@ -6,15 +6,7 @@
 import RoundScreenMobile from './screens/rounde/RoundScreen.mobile';
 
 // import StopWatchBrain from './components/stopWatch/StopWatchBrain';
-import './App.css';
-const appHeight = () => {
-  document.documentElement.style.setProperty(
-    '--app-height',
-    `${window.innerHeight}px`
-  );
-};
-window.addEventListener('resize', appHeight);
-appHeight();
+
 function App() {
   // const [width, height] = useWindowSize();
 
