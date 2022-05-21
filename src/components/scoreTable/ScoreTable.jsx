@@ -13,8 +13,8 @@ function ScoreTable({ points, pointName, isLastTable }) {
                 : ''
             }`}
           >
-            <p>{point}</p>
             <p>{points[index] ? secToString(points[index]) : '--:--:--'}</p>
+            <p>{point}</p>
           </div>
         </div>
       ) : null;

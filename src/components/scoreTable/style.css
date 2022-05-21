@@ -14,11 +14,10 @@
   /* background-color: #000000; */
   border: none;
 }
-
 .score-table__row::after {
   z-index: 0;
   position: absolute;
-  content: '';
+  content: "";
   left: 0;
   /* top: 0;
   height: 0;
@@ -34,15 +33,14 @@
 .score-table__row::before {
   z-index: 0;
   position: absolute;
-  content: '';
+  content: "";
   right: 0;
   /*top: 0;
-  width: 0;
-  height: 0;
-  border-top: 1.5rem solid transparent;
-  border-left: 1rem solid red;
-  border-bottom: 1.5rem solid transparent; */
-
+    width: 0;
+    height: 0;
+    border-top: 1.5rem solid transparent;
+    border-left: 1rem solid red;
+    border-bottom: 1.5rem solid transparent; */
   border-left: 1rem solid #e2eae8;
   border-top: 1.3rem solid transparent;
   border-bottom: 1.3rem solid transparent;
@@ -72,4 +70,4 @@
 .score-table__row-line--end p {
   font-size: 20px;
   text-shadow: 0px 0px 5px black;
-}
+}/*# sourceMappingURL=style.css.map */

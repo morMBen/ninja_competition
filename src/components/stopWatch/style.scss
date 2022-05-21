@@ -1,0 +1,34 @@
+@use '../../utils/styles/colors/globalColors.scss';
+
+.stopwatch-button {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 15vh;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  &--red {
+    background-color: globalColors.$red;
+  }
+  &--green {
+    background-color: globalColors.$green;
+  }
+  &--yellow {
+    background-color: globalColors.$yellow;
+  }
+  &--blue {
+    background-color: globalColors.$lightblue;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+  }
+  &--buzzer {
+    background-color: globalColors.$blue;
+    text-shadow: 0px 0px 5px #fff;
+  }
+  &--off {
+    background-color: globalColors.$lightgray;
+  }
+}

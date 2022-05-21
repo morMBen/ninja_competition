@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import StopWatchButtons from './StopWatchButtons';
 import TimerInterval from './TimerInterval';
+import Banner from '../UI/banner/Banner';
 
 function StopWatchBrain({
   numOfPoints,
@@ -13,29 +14,34 @@ function StopWatchBrain({
   const [isOn, setIsOn] = useState(false);
   const [isReset, setIsReset] = useState(true);
   const [pauseOn, setPauseOn] = useState(0);
+  const [isResetBannerOn, setIsResetBannerOn] = useState(false);
 
   const setTime = (sec) => {
     const currentTime = Number(sec) + Number(pauseOn);
     setSeconds(currentTime);
-    // console.log(currentTime);
   };
 
   const pauseTimer = () => {
     setPauseOn(seconds);
   };
   const restartTimer = () => {
+    setIsReset(true);
     setSplitPoints([]);
     setPauseOn(0);
     setSeconds(0);
     setIsOn(false);
   };
   const handleStartStop = () => {
-    if (isOn) {
-      pauseTimer();
+    //? all points passed
+    if (splitPoints.length === numOfPoints) {
     } else {
-      setIsReset(false);
+      if (isOn) {
+        pauseTimer();
+      } else {
+        setIsReset(false);
+      }
+      setIsOn((prev) => !prev);
     }
-    setIsOn((prev) => !prev);
   };
   const handleSplitReset = () => {
     if (isOn) {
@@ -45,11 +51,21 @@ function StopWatchBrain({
       }
       setSplitPoints((prev) => [...prev, seconds]);
     } else {
-      restartTimer();
+      setIsResetBannerOn(true);
     }
   };
+
   return (
     <>
+      {isResetBannerOn && (
+        <Banner
+          setYes={() => {
+            restartTimer();
+            setIsResetBannerOn(false);
+          }}
+          setNo={() => setIsResetBannerOn(false)}
+        />
+      )}
       {isOn && <TimerInterval setTime={setTime} fractionSpeed={50} />}
       <StopWatchButtons
         handleStartStop={handleStartStop}
@@ -57,6 +73,7 @@ function StopWatchBrain({
         isRunning={isOn}
         isReset={isReset}
         isLastPoint={numOfPoints <= splitPoints.length + 1}
+        isEnd={splitPoints.length === numOfPoints}
       />
     </>
   );

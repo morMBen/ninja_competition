@@ -18,7 +18,7 @@ function App() {
         numOfSteps={14}
         nowOnStepNum={2}
       /> */}
-      <RoundScreenMobile numOfPoints={4} />
+      <RoundScreenMobile numOfPoints={14} competitorName={'דני דנינו'} />
     </>
   );
 }

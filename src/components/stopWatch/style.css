@@ -1,0 +1,31 @@
+.stopwatch-button {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 15vh;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.stopwatch-button--red {
+  background-color: #a30215;
+}
+.stopwatch-button--green {
+  background-color: #48c276;
+}
+.stopwatch-button--yellow {
+  background-color: #f9ce0d;
+}
+.stopwatch-button--blue {
+  background-color: #8d93b3;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+}
+.stopwatch-button--buzzer {
+  background-color: #245cd0;
+  text-shadow: 0px 0px 5px #fff;
+}
+.stopwatch-button--off {
+  background-color: rgb(181, 181, 181);
+}/*# sourceMappingURL=style.css.map */

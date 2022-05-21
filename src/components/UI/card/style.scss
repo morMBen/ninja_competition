@@ -1,0 +1,6 @@
+@use '../../../utils/styles/colors/globalColors.scss';
+.card {
+  background-color: globalColors.$white;
+  padding: 1rem;
+  border-radius: 10px;
+}

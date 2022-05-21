@@ -10,3 +10,7 @@ export const off_class = 'stopwatch-button--off';
 export const off_text = '';
 export const buzzer_class = 'stopwatch-button--buzzer';
 export const buzzer_text = 'Buzzer';
+export const continue_class = 'stopwatch-button--green';
+export const continue_text = 'Continue';
+export const end_class = 'stopwatch-button--green';
+export const end_text = 'End';

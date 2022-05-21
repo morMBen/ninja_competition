@@ -12,13 +12,19 @@ import {
   off_text,
   buzzer_class,
   buzzer_text,
+  continue_class,
+  continue_text,
+  end_class,
+  end_text,
 } from '../../utils/constants/content/stopWatchButtons';
+import './style.css';
 function StopWatchButtons({
   handleStartStop,
   handleSplitReset,
   isRunning,
   isReset,
   isLastPoint,
+  isEnd,
 }) {
   const [buttonsData, setButtonsData] = useState({
     startStopClass: start_class,
@@ -39,28 +45,26 @@ function StopWatchButtons({
         bD.splitResetText = split_text;
       }
     } else {
-      bD.startStopClass = start_class;
-      bD.startStopText = start_text;
       if (isReset) {
+        bD.startStopClass = start_class;
+        bD.startStopText = start_text;
         bD.splitResetClass = off_class;
         bD.splitResetText = off_text;
       } else {
+        console.log(isEnd);
+        if (isEnd) {
+          bD.startStopClass = end_class;
+          bD.startStopText = end_text;
+        } else {
+          bD.startStopClass = continue_class;
+          bD.startStopText = continue_text;
+        }
         bD.splitResetClass = reset_class;
         bD.splitResetText = reset_text;
       }
     }
     setButtonsData(bD);
-    //   {
-    //   startStopClass: isRunning ? stop_class : start_class,
-    //   startStopText: isRunning ? stop_text : start_text,
-    //   splitResetClass: isRunning
-    //     ? split_class
-    //     : isReset
-    //     ? off_class
-    //     : reset_class,
-    //   splitResetText: isRunning ? split_text : isReset ? off_text : reset_text,
-    // }
-  }, [isRunning, isReset, isLastPoint]);
+  }, [isRunning, isReset, isLastPoint, isEnd]);
 
   return (
     <>
