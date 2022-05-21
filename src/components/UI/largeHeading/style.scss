@@ -1,0 +1,7 @@
+@use '../../../utils/styles/fonts/fonts.scss';
+.large-heading {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-family: fonts.$heebo;
+}

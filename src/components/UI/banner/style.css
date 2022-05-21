@@ -3,18 +3,12 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(128, 128, 128, 0.291);
+  background: rgba(128, 128, 128, 0.914);
   display: flex;
 }
 .banner__card {
-  margin: auto;
   padding: 1rem;
-}
-.banner__card h3 {
-  max-width: 70vw;
-  direction: rtl;
-  text-align: right;
-  font-size: 20px;
+  margin: auto;
 }
 .banner__buttons {
   display: flex;
@@ -27,5 +21,5 @@
   padding: 0.3rem 0.7rem;
   border-radius: 10px;
   border-style: none;
-  background: gray;
-} /*# sourceMappingURL=style.css.map */
+  background: rgb(181, 181, 181);
+}/*# sourceMappingURL=style.css.map */

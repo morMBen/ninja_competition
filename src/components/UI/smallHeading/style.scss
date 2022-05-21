@@ -1,3 +1,6 @@
+@use '../../../utils/styles/fonts/fonts.scss';
 .small-heading {
   font-size: 20px;
+  font-weight: 500;
+  font-family: fonts.$heebo;
 }

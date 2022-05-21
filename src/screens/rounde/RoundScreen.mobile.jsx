@@ -4,6 +4,8 @@ import ScoreTable from '../../components/scoreTable/ScoreTable';
 import { secToString } from '../../utils/ClockCalc';
 
 import './style.css';
+import LargeHeading from '../../components/UI/largeHeading/LargeHeading';
+import MediumHeading from '../../components/UI/mediumHeading/MediumHeading';
 const arrOfPoints = [
   '1',
   '2',
@@ -59,10 +61,10 @@ function RoundScreenMobile({ numOfPoints, competitorName }) {
     <div className='RoundScreenMobile'>
       <section className='RoundScreenMobile__section'>
         <div className='RoundScreenMobile__head '>
-          <h1>{competitorName}</h1>
+          <MediumHeading text={competitorName} isRtl={true} />
         </div>
         <div className='RoundScreenMobile__scores'>
-          {<h1>{secToString(seconds)}</h1>}
+          <LargeHeading text={secToString(seconds)} />
           <div>{insertScoresTable()}</div>
         </div>
         <div className='RoundScreenMobile__footer'>

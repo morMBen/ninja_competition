@@ -1,1 +1,1 @@
-{"version":3,"sources":["style.scss","../../../utils/styles/colors/globalColors.scss","style.css"],"names":[],"mappings":"AACA;EACE,yBCMM;EDLN,aAAA;EACA,mBAAA;AEAF","file":"style.css"}
+{"version":3,"sources":["style.scss","../../../utils/styles/colors/globalColors.scss","style.css"],"names":[],"mappings":"AACA;EACE,yBCMM;EDLN,kBAAA;EACA,mBAAA;EACA,yBAAA;AEAF","file":"style.css"}

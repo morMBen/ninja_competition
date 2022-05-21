@@ -1,6 +1,18 @@
 @use '../../../utils/styles/colors/globalColors.scss';
 .card {
   background-color: globalColors.$white;
-  padding: 1rem;
+  padding: 2rem 1rem;
   border-radius: 10px;
+  border: 6px solid #4d52cf;
+
+  // clip-path: polygon(
+  //   50% 0,
+  //   90% 20%,
+  //   100% 40%,
+  //   80% 90%,
+  //   50% 100%,
+  //   20% 90%,
+  //   0 40%,
+  //   10% 20%
+  // );
 }

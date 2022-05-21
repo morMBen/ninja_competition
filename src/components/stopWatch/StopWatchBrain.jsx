@@ -2,6 +2,8 @@ import { useState } from 'react';
 import StopWatchButtons from './StopWatchButtons';
 import TimerInterval from './TimerInterval';
 import Banner from '../UI/banner/Banner';
+import SmallHeading from '../UI/smallHeading/SmallHeading';
+import XsHeading from '../UI/xsHeading/XsHeading';
 
 function StopWatchBrain({
   numOfPoints,
@@ -58,13 +60,25 @@ function StopWatchBrain({
   return (
     <>
       {isResetBannerOn && (
-        <Banner
-          setYes={() => {
-            restartTimer();
-            setIsResetBannerOn(false);
-          }}
-          setNo={() => setIsResetBannerOn(false)}
-        />
+        <Banner>
+          <SmallHeading text='אתה בטוח?' isRtl={true} />
+          <>
+            <button
+              onClick={() => {
+                restartTimer();
+                setIsResetBannerOn(false);
+              }}
+            >
+              כן
+            </button>
+            <button onClick={() => setIsResetBannerOn(false)}> לא</button>
+          </>
+
+          <XsHeading
+            text='* אם תמחק את הנתונים לא תוכל לשחזר אותם בהמשך!'
+            isRtl={true}
+          />
+        </Banner>
       )}
       {isOn && <TimerInterval setTime={setTime} fractionSpeed={50} />}
       <StopWatchButtons

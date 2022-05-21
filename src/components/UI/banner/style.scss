@@ -1,19 +1,15 @@
+@use '../../../utils/styles/colors/globalColors.scss';
 .banner {
   position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(128, 128, 128, 0.291);
+  background: globalColors.$lightgrayTransparent;
   display: flex;
-  &__card {
-    margin: auto;
 
-    h3 {
-      max-width: 70vw;
-      direction: rtl;
-      text-align: right;
-      font-size: 20px;
-    }
+  &__card {
+    padding: 1rem;
+    margin: auto;
   }
   &__buttons {
     display: flex;
@@ -25,7 +21,7 @@
       padding: 0.3rem 0.7rem;
       border-radius: 10px;
       border-style: none;
-      background: gray;
+      background: globalColors.$lightgray;
     }
   }
 }
