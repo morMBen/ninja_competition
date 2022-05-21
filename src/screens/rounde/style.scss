@@ -20,6 +20,10 @@
       ),
       url(https://grainy-gradients.vercel.app/noise.svg);
     height: 10%;
+    line-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   &__scores {
     background-color: #000000;

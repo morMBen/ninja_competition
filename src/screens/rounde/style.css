@@ -14,6 +14,10 @@
   padding: 0 1rem;
   background: linear-gradient(to left, rgb(181, 181, 181), #8a8785), url(https://grainy-gradients.vercel.app/noise.svg);
   height: 10%;
+  line-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .RoundScreenMobile__scores {
   background-color: #000000;
