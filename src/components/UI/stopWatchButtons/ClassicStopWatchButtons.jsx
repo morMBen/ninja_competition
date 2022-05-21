@@ -16,9 +16,9 @@ import {
   continue_text,
   end_class,
   end_text,
-} from '../../utils/constants/content/stopWatchButtons';
+} from '../../../utils/constants/content/stopWatchButtons';
 import './style.css';
-function StopWatchButtons({
+function ClassicStopWatchButtons({
   handleStartStop,
   handleSplitReset,
   isRunning,
@@ -51,7 +51,6 @@ function StopWatchButtons({
         bD.splitResetClass = off_class;
         bD.splitResetText = off_text;
       } else {
-        console.log(isEnd);
         if (isEnd) {
           bD.startStopClass = end_class;
           bD.startStopText = end_text;
@@ -69,19 +68,19 @@ function StopWatchButtons({
   return (
     <>
       <button
-        onClick={handleStartStop}
-        className={`stopwatch-button ${buttonsData.startStopClass}`}
-      >
-        {buttonsData.startStopText}
-      </button>
-      <button
         onClick={handleSplitReset}
         className={`stopwatch-button ${buttonsData.splitResetClass}`}
       >
         {buttonsData.splitResetText}
       </button>
+      <button
+        onClick={handleStartStop}
+        className={`stopwatch-button ${buttonsData.startStopClass}`}
+      >
+        {buttonsData.startStopText}
+      </button>
     </>
   );
 }
 
-export default StopWatchButtons;
+export default ClassicStopWatchButtons;

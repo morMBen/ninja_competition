@@ -14,3 +14,7 @@ export const continue_class = 'stopwatch-button--green';
 export const continue_text = 'Continue';
 export const end_class = 'stopwatch-button--green';
 export const end_text = 'End';
+export const passed_class = 'stopwatch-button--green';
+export const passed_text = 'Passed';
+export const fell_class = 'stopwatch-button--red';
+export const fell_text = 'fell';

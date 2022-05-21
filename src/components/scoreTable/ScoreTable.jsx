@@ -13,7 +13,15 @@ function ScoreTable({ points, pointName, isLastTable }) {
                 : ''
             }`}
           >
-            <p>{points[index] ? secToString(points[index]) : '--:--:--'}</p>
+            <p>
+              {points[index]
+                ? secToString(points[index].seconds || points[index])
+                : '--:--:--'}
+            </p>
+
+            {points[index].seconds && !points[index].passed && (
+              <p className='fell'>X</p>
+            )}
             <p>{point}</p>
           </div>
         </div>

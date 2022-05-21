@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import StopWatchBrain from '../../components/stopWatch/StopWatchBrain';
 import ScoreTable from '../../components/scoreTable/ScoreTable';
 import { secToString } from '../../utils/ClockCalc';
 
 import './style.css';
 import LargeHeading from '../../components/UI/largeHeading/LargeHeading';
 import MediumHeading from '../../components/UI/mediumHeading/MediumHeading';
+import SemiOfficialStopWatch from '../../components/stopWatch/semiOfficialStopWatch/SemiOfficialStopWatch';
+import ClassicStopWatchBrain from '../../components/stopWatch/classicStopWatch/ClassicStopWatchBrain';
 const arrOfPoints = [
   '1',
   '2',
@@ -23,7 +24,7 @@ const arrOfPoints = [
   '14',
   '15',
 ];
-function RoundScreenMobile({ numOfPoints, competitorName, setFinish }) {
+function RoundScreenMobile({ numOfPoints, competitorName, setFinish, type }) {
   const [pointsNames, setPointsNames] = useState([]);
   const [splitPoints, setSplitPoints] = useState([]);
   const [seconds, setSeconds] = useState(0);
@@ -71,14 +72,28 @@ function RoundScreenMobile({ numOfPoints, competitorName, setFinish }) {
           <div>{insertScoresTable()}</div>
         </div>
         <div className='RoundScreenMobile__footer'>
-          <StopWatchBrain
-            splitPoints={splitPoints}
-            setSplitPoints={setSplitPoints}
-            setFinish={setFinish}
-            numOfPoints={numOfPoints}
-            setSeconds={setSeconds}
-            seconds={seconds}
-          />
+          <>
+            {type === 'speed' && (
+              <ClassicStopWatchBrain
+                splitPoints={splitPoints}
+                setSplitPoints={setSplitPoints}
+                setFinish={setFinish}
+                numOfPoints={numOfPoints}
+                setSeconds={setSeconds}
+                seconds={seconds}
+              />
+            )}
+            {type === 'semi-official' && (
+              <SemiOfficialStopWatch
+                splitPoints={splitPoints}
+                setSplitPoints={setSplitPoints}
+                setFinish={setFinish}
+                numOfPoints={numOfPoints}
+                setSeconds={setSeconds}
+                seconds={seconds}
+              />
+            )}
+          </>
         </div>
       </section>
     </div>

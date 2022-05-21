@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import StopWatchButtons from './StopWatchButtons';
-import TimerInterval from './TimerInterval';
-import Banner from '../UI/banner/Banner';
-import SmallHeading from '../UI/smallHeading/SmallHeading';
-import XsHeading from '../UI/xsHeading/XsHeading';
+import Banner from '../../UI/banner/Banner';
+import SmallHeading from '../../UI/smallHeading/SmallHeading';
+import ClassicStopWatchButtons from '../../UI/stopWatchButtons/ClassicStopWatchButtons';
+import TimerInterval from '../timerInterval/TimerInterval';
+import XsHeading from '../../UI/xsHeading/XsHeading';
 
-function StopWatchBrain({
+function ClassicStopWatchBrain({
   numOfPoints,
   setFinish,
   splitPoints,
@@ -82,7 +82,7 @@ function StopWatchBrain({
         </Banner>
       )}
       {isOn && <TimerInterval setTime={setTime} fractionSpeed={50} />}
-      <StopWatchButtons
+      <ClassicStopWatchButtons
         handleStartStop={handleStartStop}
         handleSplitReset={handleSplitReset}
         isRunning={isOn}
@@ -94,4 +94,4 @@ function StopWatchBrain({
   );
 }
 
-export default StopWatchBrain;
+export default ClassicStopWatchBrain;

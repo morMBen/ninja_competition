@@ -24,22 +24,32 @@ function HomePageMobile({ setIsNavOpen }) {
         <Card
           onClick={() => {
             setIsNavOpen(false);
+            navigate('/semi-official-round');
+          }}
+          style={{ padding: '1rem', borderWidth: '4px' }}
+        >
+          <LargeHeading text='מסלול זהיר' isRtl={true} />
+          <MediumHeading
+            text='השתדלו ליפול כמה שפחות ולסיים במהירות האפשרית'
+            isRtl={true}
+          />
+        </Card>
+        <Card
+          onClick={() => {
+            setIsNavOpen(false);
             navigate('/speed-round');
           }}
           style={{ padding: '1rem', borderWidth: '4px' }}
         >
           <LargeHeading text='מסלול מהיר' isRtl={true} />
           <MediumHeading
-            text='פשוט להיכנס לבחור מספר מכשולים ולהתחיל לרוץ'
+            text='סיימו בזמן המהיר ביותר, ללא התחשבות בנפילות.'
             isRtl={true}
           />
         </Card>
-
-        <Card />
         <Card />
         <Card />
       </div>
-      {/* <RoundScreenMobile numOfPoints={14} competitorName={'דני דנינו'} /> */}
     </div>
   );
 }

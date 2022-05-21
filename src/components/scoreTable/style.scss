@@ -1,17 +1,14 @@
 .score-table {
-  /* background-color: lightcoral; */
   margin: 0 0.1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   &__row {
-    /* z-index: 2; */
     position: relative;
     box-sizing: border-box;
     padding: 0 1rem;
     height: 3rem;
-    /* background-color: #000000; */
     border: none;
 
     &::after {
@@ -19,11 +16,6 @@
       position: absolute;
       content: '';
       left: 0;
-      /* top: 0;
-      height: 0;
-      border-top: 1.5rem solid transparent;
-      border-right: 1rem solid red;
-      border-bottom: 1.5rem solid transparent; */
       border-right: 1rem solid #e2eae8;
       border-top: 1.3rem solid transparent;
       border-bottom: 1.3rem solid transparent;
@@ -36,12 +28,6 @@
       position: absolute;
       content: '';
       right: 0;
-      /*top: 0;
-        width: 0;
-        height: 0;
-        border-top: 1.5rem solid transparent;
-        border-left: 1rem solid red;
-        border-bottom: 1.5rem solid transparent; */
 
       border-left: 1rem solid #e2eae8;
       border-top: 1.3rem solid transparent;
@@ -71,11 +57,15 @@
     &--end {
       background: #f7e660;
       background: linear-gradient(225deg, #f7e660 0%, #b6ae6c 100%);
-
       p {
         font-size: 20px;
         text-shadow: 0px 0px 5px black;
       }
+    }
+    .fell {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
     }
   }
 }

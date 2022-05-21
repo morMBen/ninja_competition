@@ -10,12 +10,10 @@
     background: lightblue;
 
     &-text {
-      // text-align: center;
       height: 12vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      // margin: auto;
     }
   }
   &__body {
@@ -28,9 +26,6 @@
     div:first-child {
       grid-column-start: 1;
       grid-column-end: 3;
-    }
-    div {
-      // background-color: globalColors.$lightgray;
     }
   }
 }

@@ -10,14 +10,25 @@ function App() {
     <BrowserRouter>
       {isNavOpen && <NavBar />}
       <Routes>
-        {/* <Route path='*' element={<HomePageMobile />} /> */}
+        <Route path='*' element={<HomePageMobile />} />
         <Route
           path='/'
           element={<HomePageMobile setIsNavOpen={setIsNavOpen} />}
         />
         <Route
           path='/speed-round'
-          element={<SpeedRound setIsNavOpen={setIsNavOpen} />}
+          element={
+            <SpeedRound roundType={'speed'} setIsNavOpen={setIsNavOpen} />
+          }
+        />
+        <Route
+          path='/semi-official-round'
+          element={
+            <SpeedRound
+              roundType={'semi-official'}
+              setIsNavOpen={setIsNavOpen}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
