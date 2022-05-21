@@ -1,0 +1,28 @@
+.home-page-mobile {
+  width: 100%;
+  height: 100vh;
+  background: rgb(181, 181, 181);
+  box-sizing: border-box;
+}
+.home-page-mobile__header {
+  height: 20vh;
+  background: lightblue;
+}
+.home-page-mobile__header-text {
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-page-mobile__body {
+  min-height: 80vh;
+  background: black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+.home-page-mobile__body div:first-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}/*# sourceMappingURL=style.css.map */

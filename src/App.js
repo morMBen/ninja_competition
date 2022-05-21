@@ -1,25 +1,26 @@
-// import React, { useEffect, useState } from 'react';
-// import { useWindowSize } from './utils/useWindowSize';
-// import { getSvgTemplate } from './utils/constants/pathSvg/svgTemplate';
-// import CompPath from './components/compPath/CompPath';
-// import { stepsData } from './utils/constants/stepsFakeData';
-import RoundScreenMobile from './screens/rounde/RoundScreen.mobile';
-
-// import StopWatchBrain from './components/stopWatch/StopWatchBrain';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/navBar/NavBar';
+import HomePageMobile from './screens/homePage/HomePageMobile';
+import SpeedRound from './screens/speedRound/SpeedRound';
 
 function App() {
-  // const [width, height] = useWindowSize();
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <>
-      {/* <CompPath
-        svgTemplate={getSvgTemplate(width < height ? 0 : 1)}
-        stepsData={stepsData}
-        numOfSteps={14}
-        nowOnStepNum={2}
-      /> */}
-      <RoundScreenMobile numOfPoints={14} competitorName={'דני דנינו'} />
-    </>
+    <BrowserRouter>
+      {isNavOpen && <NavBar />}
+      <Routes>
+        {/* <Route path='*' element={<HomePageMobile />} /> */}
+        <Route
+          path='/'
+          element={<HomePageMobile setIsNavOpen={setIsNavOpen} />}
+        />
+        <Route
+          path='/speed-round'
+          element={<SpeedRound setIsNavOpen={setIsNavOpen} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

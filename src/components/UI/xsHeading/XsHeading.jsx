@@ -1,8 +1,13 @@
 import React from 'react';
 import './style.css';
-function XsHeading({ text, addClass, isRtl }) {
+function XsHeading({ text, addClass, isRtl, style }) {
   return (
-    <h4 className={`${addClass} xs-heading ${isRtl && 'text-rtl'}`}>{text}</h4>
+    <h4
+      style={style}
+      className={`${addClass} xs-heading ${isRtl && 'text-rtl'}`}
+    >
+      {text}
+    </h4>
   );
 }
 

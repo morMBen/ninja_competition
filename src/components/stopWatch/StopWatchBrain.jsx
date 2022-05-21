@@ -36,6 +36,7 @@ function StopWatchBrain({
   const handleStartStop = () => {
     //? all points passed
     if (splitPoints.length === numOfPoints) {
+      setFinish(splitPoints);
     } else {
       if (isOn) {
         pauseTimer();

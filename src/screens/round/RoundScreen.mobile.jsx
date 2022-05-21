@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import StopWatchBrain from '../../components/stopWatch/StopWatchBrain';
 import ScoreTable from '../../components/scoreTable/ScoreTable';
 import { secToString } from '../../utils/ClockCalc';
@@ -23,14 +23,14 @@ const arrOfPoints = [
   '14',
   '15',
 ];
-function RoundScreenMobile({ numOfPoints, competitorName }) {
-  const pointsNames = arrOfPoints.slice(0, numOfPoints);
+function RoundScreenMobile({ numOfPoints, competitorName, setFinish }) {
+  const [pointsNames, setPointsNames] = useState([]);
   const [splitPoints, setSplitPoints] = useState([]);
   const [seconds, setSeconds] = useState(0);
-  const setFinish = (arg1, arg2) => {
-    console.log(arg1);
-    console.log(arg2);
-  };
+  useEffect(() => {
+    setPointsNames(arrOfPoints.slice(0, numOfPoints));
+  }, [setPointsNames, numOfPoints]);
+
   const insertScoresTable = () => {
     if (pointsNames.length < 8) {
       return (
@@ -64,7 +64,10 @@ function RoundScreenMobile({ numOfPoints, competitorName }) {
           <MediumHeading text={competitorName} isRtl={true} />
         </div>
         <div className='RoundScreenMobile__scores'>
-          <LargeHeading text={secToString(seconds)} />
+          <LargeHeading
+            style={{ padding: '1rem' }}
+            text={secToString(seconds)}
+          />
           <div>{insertScoresTable()}</div>
         </div>
         <div className='RoundScreenMobile__footer'>

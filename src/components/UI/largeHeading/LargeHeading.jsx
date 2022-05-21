@@ -1,8 +1,11 @@
 import React from 'react';
 import './style.css';
-function LargeHeading({ text, addClass, isRtl }) {
+function LargeHeading({ style, text, addClass, isRtl }) {
   return (
-    <h3 className={`${addClass} large-heading ${isRtl && 'text-rtl'}`}>
+    <h3
+      style={style}
+      className={`${addClass} large-heading ${isRtl && 'text-rtl'}`}
+    >
       {text}
     </h3>
   );
